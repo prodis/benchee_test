@@ -37,10 +37,10 @@ end)
 ## Benchmark
 
 ```elixir
-iex> BencheeTest.run
+iex> MapListPerformance.benchmark
 ```
 
-Results on my notebook for 10,000 entries:
+Some results running on my notebook for 10,000 entries:
 ```
 Name                     ips        average  deviation         median         99th %
 improved_match        137.89        7.25 ms    ±22.84%        6.72 ms       11.71 ms
@@ -49,4 +49,24 @@ map_match             116.17        8.61 ms    ±14.37%        8.19 ms       12.
 Comparison:
 improved_match        137.89
 map_match             116.17 - 1.19x slower
+```
+
+```
+Name                     ips        average  deviation         median         99th %
+improved_match        110.63        9.04 ms    ±19.43%        8.92 ms       16.40 ms
+map_match             107.59        9.29 ms    ±14.44%        8.99 ms       13.21 ms
+
+Comparison:
+improved_match        110.63
+map_match             107.59 - 1.03x slower
+```
+
+```
+Name                     ips        average  deviation         median         99th %
+improved_match        104.47        9.57 ms    ±18.44%        9.46 ms       16.03 ms
+map_match              83.67       11.95 ms    ±20.65%       11.75 ms       23.72 ms
+
+Comparison:
+improved_match        104.47
+map_match              83.67 - 1.25x slower
 ```
